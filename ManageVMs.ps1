@@ -243,24 +243,15 @@ Function Main
 {
     If ( $true -eq $Create )
     {
-        ForEach ( $node in $Nodes )
-        {
-            $Nodes.Keys | ForEach-Object { $Nodes[ $PSItem ] | Compile | Create }
-        }
+        $Nodes.Keys | ForEach-Object { $Nodes[ $PSItem ] | Compile | Create }
     }
     ElseIf ( $true -eq $Update )
     {
-        ForEach ( $node in $Nodes )
-        {
-            $Nodes.Keys | ForEach-Object { $Nodes[ $PSItem ] | Compile | Update }
-        }
+        $Nodes.Keys | ForEach-Object { $Nodes[ $PSItem ] | Compile | Update }
     }
     ElseIf ( $true -eq $Destroy )
     {
-        ForEach ( $node in $Nodes )
-        {
-            $Nodes.Keys | ForEach-Object { $Nodes[ $PSItem ] | Compile | Destroy -KeepDisks:($KeepDisks) }
-        }
+        $Nodes.Keys | ForEach-Object { $Nodes[ $PSItem ] | Compile | Destroy -KeepDisks:($KeepDisks) }
     }
 }
 
